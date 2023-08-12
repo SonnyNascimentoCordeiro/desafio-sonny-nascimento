@@ -41,11 +41,10 @@ export class CaixaDaLanchonete {
                 valorItem += itemPrincipal.valor;
             }
 
-            console.log(item);
-            totalItemCarrinho = calculaValorModificado(metodoPagamentoAtual.modificador,
-                item.valor, metodoPagamentoAtual.valor) * quantidade;
+            totalItemCarrinho = item.valor * quantidade;
             totalCompra += totalItemCarrinho;
         }
+        totalCompra = calculaValorModificado(metodoPagamentoAtual.modificador, totalCompra, metodoPagamentoAtual.valor);
         totalCompra = parseFloat(totalCompra.toFixed(2));
 
         return totalCompra.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
