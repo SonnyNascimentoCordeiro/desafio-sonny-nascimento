@@ -1,0 +1,17 @@
+[
+  {
+    "codigo": "debito",
+    "modificador": "+",
+    "valor": 0
+  },
+  {
+    "codigo": "dinheiro",
+    "modificador": "-",
+    "valor": 5
+  },
+  {
+    "codigo": "credito",
+    "modificador": "+",
+    "valor": 3
+  }
+]
