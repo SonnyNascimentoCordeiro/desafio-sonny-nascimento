@@ -25,6 +25,7 @@ describe('CaixaDaLanchonete', () => {
     test.each([
         ['credito', 'R$ 11,85', ['cafe,1', 'sanduiche,1', 'queijo,1']],
         ['debito', 'R$ 11,50', ['cafe,1', 'sanduiche,1', 'queijo,1']],
+        ['credito', 'R$ 15,96', ['combo1,1','cafe,2']],
     ])('compra de 3 itens em %p deve resultar em %p', validaTeste);
 
     test.each([
@@ -43,6 +44,7 @@ describe('CaixaDaLanchonete', () => {
 
     test.each([
         ['chantily', 'dinheiro', 'Item extra não pode ser pedido sem o principal', ['chantily,1']],
+        ['chantily com combo possuindo café', 'dinheiro', 'Item extra não pode ser pedido sem o principal', ['combo2,1','chantily,1']],
         ['queijo', 'credito', 'Item extra não pode ser pedido sem o principal', ['queijo,1']],
         ['chantily com outro item', 'credito', 'Item extra não pode ser pedido sem o principal', ['chantily,1', 'sanduiche,1']],
         ['queijo com outro item', 'debito', 'Item extra não pode ser pedido sem o principal', ['cafe,1', 'queijo,1']],
